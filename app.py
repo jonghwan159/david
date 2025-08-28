@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 # Flask 애플리케이션 객체 생성
 app = Flask(__name__)
@@ -7,6 +7,10 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     return "Hello, DevOps!"
+
+@app.route("/menu")
+def menu():
+    return render_template("menu.html")
 
 # 서버 실행
 if __name__ == "__main__":
